@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="d-flex align-content-around flex-wrap">
+    <div class="card-columns mt-3">
+      <div class="card text-black-50 bg-light">
+        <img class="card-img-top" src="assets/images/tommywh.jpg" alt=""/>
+        <div class="card-body">
+          <h4 class="card-title product-name">Women Silver Watch</h4>
+          <p class="card-text product-brand">Tommy Hilfiger</p>
+          <p class="card-text product-description">
+            HAVEN Silver Dial Silver Stainless Steel Strap
+          </p>
+          <hr>
+          <p class="card-text product-price">Price: <span class="float-right">$200</span></p>
+          
+         <div class="buttons">
+            <button class="btn btn-success col mb-2" onclick="addtoCart(this)">Add To Cart</button>
+            <button class="btn btn-info col">Read More</button>
+          </div>
+          
+        </div>
+      </div>
+      <div class="card text-black-50 bg-light">
+        <img class="card-img-top" src="assets/images/tommylg.jpg" alt="" />
+        <div class="card-body">
+          <h4 class="card-title product-name">Women Gold Watch</h4>
+          <p class="card-text product-brand">Tommy Hilfiger</p>
+          <p class="card-text product-description">
+            LIBERTY Gold Dial Gold Stainless Steel Strap
+          </p>
+          <hr>
+          <p class="card-text product-price">Price: <span class="float-right">$190</span></p>
+          
+         <div class="buttons">
+            <button class="btn btn-success col mb-2" onclick="addtoCart(this)">Add To Cart</button>
+            <button class="btn btn-info col">Read More</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card text-black-50 bg-light">
+        <img class="card-img-top" src="assets/images/casiolm.jpg" alt="" />
+        <div class="card-body">
+          <h4 class="card-title product-name">Silver Mens Watch</h4>
+          <p class="card-text product-brand">Casio</p>
+          <p class="card-text product-description">
+            Dress Analog Leather Strap Silver Mens Watch
+          </p>
+          <hr>
+          <p class="card-text product-price">Price: <span class="float-right">$25</span></p>
+          
+         <div class="buttons">
+            <button class="btn btn-success col mb-2" onclick="addtoCart(this)">Add To Cart</button>
+            <button class="btn btn-info col">Read More</button>
+          </div>
+        </div>
+      </div>
+      <div class="card text-black-50 bg-light">
+        <img class="card-img-top" src="assets/images/seikocm.jpg" alt="" />
+        <div class="card-body">
+          <h4 class="card-title product-name">Canvas Strap Sports Watch</h4>
+          <p class="card-text product-brand">Seiko</p>
+          <p class="card-text product-description">
+            Mens 5 Sports Silver Watch Canvas Strap Automatic Movement
+          </p>
+          <hr>
+          <p class="card-text product-price">Price: <span class="float-right">$250</span></p>
+          
+         <div class="buttons">
+            <button class="btn btn-success col mb-2" onclick="addtoCart(this)">Add To Cart</button>
+            <button class="btn btn-info col">Read More</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card text-black-50 bg-light">
+        <img class="card-img-top" src="assets/images/orientkingdiver.jpg" alt="" />
+        <div class="card-body">
+          <h4 class="card-title product-name">KING DIVER Analog Watch</h4>
+          <p class="card-text product-brand">Orient</p>
+          <p class="card-text product-description">
+            KING DIVER wristwatch from Orient, stainless steel and water resistance.          </p>
+          <hr>
+          <p class="card-text product-price">Price: <span class="float-right">$75</span></p>
+          
+         <div class="buttons">
+            <button class="btn btn-success col mb-2" onclick="addtoCart(this)">Add To Cart</button>
+            <button class="btn btn-info col">Read More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+        function addtoCart(element) {
+            console.log(element.parentElement.parentElement.querySelector('.product-name'));
+            let items = JSON.parse(localStorage.getItem('items'));
+            console.log(items);
+            items = (items) ? items : [];
+       
+            items.push({
+                productName: element.parentElement.parentElement.querySelector('.product-name').innerText,
+                productbrand: element.parentElement.parentElement.querySelector('.product-brand').innerText,
+                productDescription: element.parentElement.parentElement.querySelector('.product-description').innerText,
+                productPrice: Number( (element.parentElement.parentElement.querySelector('.product-price span').innerText).slice(1) ),
+            })
+
+            localStorage.setItem('items',  JSON.stringify(items));
+           
+            window.parent.$(window.parent)[0][1].refreshShoppingCart();
+            
+        }
+    </script>
+
+  </body>
+</html>
