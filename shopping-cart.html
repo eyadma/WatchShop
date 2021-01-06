@@ -36,13 +36,13 @@
       }
 
       function refreshShoppingCart(){
-         var items = JSON.parse(localStorage.getItem('items'));
+         let items = JSON.parse(localStorage.getItem('items'));
 
-         var container = document.getElementById('items-container');
+         let container = document.getElementById('items-container');
     
-         var totalCostContainer = document.getElementById('total-cost');
-         var innerH = "";
-         var totalCost = 0;
+         let totalCostContainer = document.getElementById('total-cost');
+         let innerH = "";
+         let totalCost = 0;
        
          if(items && items.length){
           items.forEach( (element, index) => {
